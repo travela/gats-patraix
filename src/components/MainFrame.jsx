@@ -7,8 +7,8 @@ import Footer from "../components/Footer.jsx";
 const MainFrame = () => {
   return (
     <>
+      <Header />
       <div className="flex flex-col justify-between h-full">
-        <Header />
         <Hero />
       </div>
       <CallToAction />
