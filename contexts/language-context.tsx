@@ -1,13 +1,13 @@
-"use client"
+"use client";
 
-import { createContext, useContext, useState, type ReactNode } from "react"
+import { createContext, useContext, useState, type ReactNode } from "react";
 
-type Language = "es" | "ca" | "en"
+type Language = "es" | "ca" | "en";
 
 interface LanguageContextType {
-  language: Language
-  setLanguage: (lang: Language) => void
-  t: (key: string) => string
+  language: Language;
+  setLanguage: (lang: Language) => void;
+  t: (key: string) => string;
 }
 
 const translations = {
@@ -18,6 +18,7 @@ const translations = {
     "nav.cats": "Adopt a Cat",
     "nav.volunteer": "Volunteer",
     "nav.contact": "Contact",
+    "nav.blog": "Blog",
 
     // Hero Section
     "hero.title": "Saving Lives, One Paw at a Time",
@@ -43,7 +44,8 @@ const translations = {
 
     // Volunteer Section
     "volunteer.title": "Join Our Team",
-    "volunteer.description": "Become a volunteer and help us make a difference in the lives of cats in need.",
+    "volunteer.description":
+      "Become a volunteer and help us make a difference in the lives of cats in need.",
     "volunteer.cta": "Volunteer Now",
 
     // Contact Section
@@ -53,6 +55,15 @@ const translations = {
     "contact.email": "Email",
     "contact.hours": "Visit Hours",
     "contact.hours.value": "Mon-Fri: 10AM-6PM, Sat-Sun: 10AM-4PM",
+
+    // Blog Section
+    "blog.title": "Latest News & Stories",
+    "blog.subtitle":
+      "Read about our rescue stories, adoption tips, and cat care advice",
+    "blog.read-more": "Read More",
+    "blog.back-to-home": "Back to Home",
+    "blog.published": "Published",
+    "blog.by": "by",
   },
   es: {
     // Navigation
@@ -61,10 +72,12 @@ const translations = {
     "nav.cats": "Adoptar un Gato",
     "nav.volunteer": "Voluntariado",
     "nav.contact": "Contacto",
+    "nav.blog": "Blog",
 
     // Hero Section
     "hero.title": "Salvando Vidas, Una Patita a la Vez",
-    "hero.subtitle": "Ayúdanos a dar una segunda oportunidad de felicidad a gatos abandonados",
+    "hero.subtitle":
+      "Ayúdanos a dar una segunda oportunidad de felicidad a gatos abandonados",
     "hero.cta.adopt": "Adoptar Ahora",
     "hero.cta.donate": "Donar",
 
@@ -97,6 +110,15 @@ const translations = {
     "contact.email": "Correo",
     "contact.hours": "Horarios de Visita",
     "contact.hours.value": "Lun-Vie: 10AM-6PM, Sáb-Dom: 10AM-4PM",
+
+    // Blog Section
+    "blog.title": "Últimas Noticias e Historias",
+    "blog.subtitle":
+      "Lee sobre nuestras historias de rescate, consejos de adopción y cuidado de gatos",
+    "blog.read-more": "Leer Más",
+    "blog.back-to-home": "Volver al Inicio",
+    "blog.published": "Publicado",
+    "blog.by": "por",
   },
   ca: {
     // Navigation
@@ -105,10 +127,12 @@ const translations = {
     "nav.cats": "Adoptar un Gat",
     "nav.volunteer": "Voluntariat",
     "nav.contact": "Contacte",
+    "nav.blog": "Blog",
 
     // Hero Section
     "hero.title": "Salvant Vides, Una Pateta Cada Vegada",
-    "hero.subtitle": "Ajuda'ns a donar una segona oportunitat de felicitat a gats abandonats",
+    "hero.subtitle":
+      "Ajuda'ns a donar una segona oportunitat de felicitat a gats abandonats",
     "hero.cta.adopt": "Adoptar Ara",
     "hero.cta.donate": "Donar",
 
@@ -141,25 +165,44 @@ const translations = {
     "contact.email": "Correu",
     "contact.hours": "Horaris de Visita",
     "contact.hours.value": "Dll-Div: 10AM-6PM, Dis-Diu: 10AM-4PM",
-  },
-}
 
-const LanguageContext = createContext<LanguageContextType | undefined>(undefined)
+    // Blog Section
+    "blog.title": "Últimes Notícies i Històries",
+    "blog.subtitle":
+      "Llig sobre les nostres històries de rescat, consells d'adopció i cura de gats",
+    "blog.read-more": "Llegir Més",
+    "blog.back-to-home": "Tornar a l'Inici",
+    "blog.published": "Publicat",
+    "blog.by": "per",
+  },
+};
+
+const LanguageContext = createContext<LanguageContextType | undefined>(
+  undefined
+);
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguage] = useState<Language>("es")
+  const [language, setLanguage] = useState<Language>("es");
 
   const t = (key: string): string => {
-    return translations[language][key as keyof (typeof translations)[typeof language]] || key
-  }
+    return (
+      translations[language][
+        key as keyof (typeof translations)[typeof language]
+      ] || key
+    );
+  };
 
-  return <LanguageContext.Provider value={{ language, setLanguage, t }}>{children}</LanguageContext.Provider>
+  return (
+    <LanguageContext.Provider value={{ language, setLanguage, t }}>
+      {children}
+    </LanguageContext.Provider>
+  );
 }
 
 export function useLanguage() {
-  const context = useContext(LanguageContext)
+  const context = useContext(LanguageContext);
   if (context === undefined) {
-    throw new Error("useLanguage must be used within a LanguageProvider")
+    throw new Error("useLanguage must be used within a LanguageProvider");
   }
-  return context
+  return context;
 }

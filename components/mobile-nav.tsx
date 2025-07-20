@@ -19,6 +19,7 @@ export function MobileNav({ onNavigate }: MobileNavProps) {
     { key: "home", label: t("nav.home") },
     { key: "about", label: t("nav.about") },
     { key: "cats", label: t("nav.cats") },
+    { key: "blog", label: t("nav.blog") },
     { key: "volunteer", label: t("nav.volunteer") },
     { key: "contact", label: t("nav.contact") },
   ]

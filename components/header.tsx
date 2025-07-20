@@ -1,25 +1,26 @@
-"use client"
+"use client";
 
-import { Button } from "@/components/ui/button"
-import { Heart } from "lucide-react"
-import { useLanguage } from "@/contexts/language-context"
-import { MobileNav } from "./mobile-nav"
-import { LanguageToggle } from "./language-toggle"
+import { Button } from "@/components/ui/button";
+import { Heart } from "lucide-react";
+import { useLanguage } from "@/contexts/language-context";
+import { MobileNav } from "./mobile-nav";
+import { LanguageToggle } from "./language-toggle";
 
 interface HeaderProps {
-  onNavigate: (section: string) => void
+  onNavigate: (section: string) => void;
 }
 
 export function Header({ onNavigate }: HeaderProps) {
-  const { t } = useLanguage()
+  const { t } = useLanguage();
 
   const navItems = [
     { key: "home", label: t("nav.home") },
     { key: "about", label: t("nav.about") },
     { key: "cats", label: t("nav.cats") },
+    { key: "blog", label: t("nav.blog") },
     { key: "volunteer", label: t("nav.volunteer") },
     { key: "contact", label: t("nav.contact") },
-  ]
+  ];
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b">
@@ -53,5 +54,5 @@ export function Header({ onNavigate }: HeaderProps) {
         </div>
       </div>
     </header>
-  )
+  );
 }

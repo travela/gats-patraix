@@ -6,6 +6,7 @@ import { Header } from "@/components/header"
 import { HeroSection } from "@/components/hero-section"
 import { AboutSection } from "@/components/about-section"
 import { CatsSection } from "@/components/cats-section"
+import { BlogSection } from "@/components/blog-section"
 import { VolunteerSection } from "@/components/volunteer-section"
 import { ContactSection } from "@/components/contact-section"
 
@@ -38,6 +39,7 @@ function AppContent() {
         <HeroSection />
         <AboutSection />
         <CatsSection />
+        <BlogSection />
         <VolunteerSection />
         <ContactSection />
       </main>
