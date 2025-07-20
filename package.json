@@ -6,7 +6,8 @@
     "build": "next build",
     "dev": "next dev",
     "lint": "next lint",
-    "start": "next start"
+    "start": "next start",
+    "postinstall": "npx @netlify/next"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
@@ -45,10 +46,10 @@
     "sonner": "^1.7.1",
     "tailwind-merge": "^2.5.5",
     "tailwindcss-animate": "^1.0.7",
-    
     "zod": "^3.24.1"
   },
   "devDependencies": {
+    "@netlify/next": "^1.4.9",
     "@types/node": "^22",
     "@types/react": "^19",
     "@types/react-dom": "^19",
