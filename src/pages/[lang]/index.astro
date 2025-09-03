@@ -1,0 +1,34 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { Navigation } from '../../components/Navigation';
+import { Hero } from '../../components/sections/Hero';
+import { About } from '../../components/sections/About';
+import { Cats } from '../../components/sections/Cats';
+import { Blog } from '../../components/sections/Blog';
+import { Contact } from '../../components/sections/Contact';
+import { Footer } from '../../components/Footer';
+import { getLangFromUrl, useTranslations, languages } from '../../lib/i18n';
+import '../../styles/globals.css';
+
+export function getStaticPaths() {
+  return Object.keys(languages).map((lang) => ({
+    params: { lang },
+  }));
+}
+
+const { lang } = Astro.params;
+const currentLang = lang as keyof typeof languages;
+const t = useTranslations(currentLang);
+---
+
+<Layout title={`${t.hero.title} - Valencia Cat Association`}>
+  <Navigation t={t} lang={currentLang} currentPath={Astro.url.pathname} client:load />
+  <main>
+    <Hero t={t} client:load />
+    <About t={t} client:load />
+    <Cats t={t} client:load />
+    <Blog t={t} lang={currentLang} client:load />
+    <Contact t={t} client:load />
+  </main>
+  <Footer t={t} client:load />
+</Layout>
