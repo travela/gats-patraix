@@ -10,12 +10,12 @@ collections:
     label: "Blog" # Used in the UI
     folder: "src/content/blog" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
-    slug: "{{slug}}" # or "{{title}}" to use the title as the slug
+    slug: "{{title | slugify}}"
     fields: # The fields for each document, usually in frontmatter
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "publishedAt", widget: "datetime" }
       - { label: "Featured Image", name: "image", widget: "image" }
       - { label: "Content", name: "content", widget: "markdown" }
       - { label: "Excerpt", name: "excerpt", widget: "markdown" }
-      - { label: "Tags", name: "tags", widget: "list" }
+      - { label: "Tags (comma separated)", name: "tags", widget: "list" }
       - { label: "Author", name: "author", widget: "string" }

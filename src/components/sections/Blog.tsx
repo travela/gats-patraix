@@ -62,7 +62,7 @@ export function Blog({ t, lang }: BlogProps) {
             <Card key={post.slug} className="group hover:shadow-xl transition-all duration-300 overflow-hidden border-0 shadow-lg">
               <div className="relative overflow-hidden">
                 <img
-                  src={post.image}
+                  src={`${import.meta.env.BASE_URL}${post.image}`}
                   alt={post.title}
                   className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                 />

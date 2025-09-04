@@ -35,8 +35,8 @@ content: >-
   *\* I have come to believe that every cat has a distinctive meaow. Before fostering several different cats I had no idea how diverse the voices of cats can be*
 excerpt: "From fostering to adoption: How a chubby, black cat won over our hearts"
 tags:
-  - "['black'"
-  - "'meaow'"
-  - "'cozy']"
+  - "black"
+  - "meaow"
+  - "cozy"
 author: Florian Mies
 ---
