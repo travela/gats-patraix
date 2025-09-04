@@ -2,34 +2,13 @@ import { Calendar, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-// import { blogPosts } from '@/data/blog';
+import { loadBlogPosts, type BlogPost} from '@/lib/utils';
 import type { Language } from '@/lib/i18n';
 
 interface BlogProps {
   t: any;
   lang: Language;
 }
-
-interface BlogPost {
-  title: string;
-  excerpt: string;
-  content: string;
-  author: string;
-  publishedAt: string;
-  image: string;
-  tags: string[];
-  slug: string;
-}
-
-
-// Define the module structure
-interface MarkdownModule {
-  frontmatter: BlogPost;
-  default: any; // The markdown content component
-  // If using Astro, you might also have:
-  // Content: ComponentType;
-}
-
 
 export function Blog({ t, lang }: BlogProps) {
   const formatDate = (dateString: string) => {
@@ -42,8 +21,7 @@ export function Blog({ t, lang }: BlogProps) {
   };
 
   // load CMS data stored in .md files
-  const postsRaw:  Record<string, MarkdownModule> = import.meta.glob('/src/content/blog/**/*.md', { eager: true });
-  const blogPosts: BlogPost[] = Object.values(postsRaw).map((post) => post.frontmatter);
+  const blogPosts: BlogPost[] = loadBlogPosts();
 
   return (
     <section id="blog" className="py-20 bg-gray-50">
