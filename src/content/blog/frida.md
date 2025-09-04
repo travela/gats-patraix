@@ -39,4 +39,5 @@ tags:
   - "meaow"
   - "cozy"
 author: Florian Mies
+slug: frida-kahlo
 ---
