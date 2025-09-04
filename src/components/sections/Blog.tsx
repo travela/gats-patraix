@@ -2,13 +2,34 @@ import { Calendar, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { blogPosts } from '@/data/blog';
+// import { blogPosts } from '@/data/blog';
 import type { Language } from '@/lib/i18n';
 
 interface BlogProps {
   t: any;
   lang: Language;
 }
+
+interface BlogPost {
+  title: string;
+  excerpt: string;
+  content: string;
+  author: string;
+  publishedAt: string;
+  image: string;
+  tags: string[];
+  slug: string;
+}
+
+
+// Define the module structure
+interface MarkdownModule {
+  frontmatter: BlogPost;
+  default: any; // The markdown content component
+  // If using Astro, you might also have:
+  // Content: ComponentType;
+}
+
 
 export function Blog({ t, lang }: BlogProps) {
   const formatDate = (dateString: string) => {
@@ -19,6 +40,10 @@ export function Blog({ t, lang }: BlogProps) {
       day: 'numeric'
     });
   };
+
+  // load CMS data stored in .md files
+  const postsRaw:  Record<string, MarkdownModule> = import.meta.glob('/src/content/blog/**/*.md', { eager: true });
+  const blogPosts: BlogPost[] = Object.values(postsRaw).map((post) => post.frontmatter);
 
   return (
     <section id="blog" className="py-20 bg-gray-50">
@@ -33,8 +58,8 @@ export function Blog({ t, lang }: BlogProps) {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {blogPosts.map((post) => (
-            <Card key={post.id} className="group hover:shadow-xl transition-all duration-300 overflow-hidden border-0 shadow-lg">
+          {blogPosts && blogPosts.map((post) => (
+            <Card key={post.slug} className="group hover:shadow-xl transition-all duration-300 overflow-hidden border-0 shadow-lg">
               <div className="relative overflow-hidden">
                 <img
                   src={post.image}
@@ -58,7 +83,7 @@ export function Blog({ t, lang }: BlogProps) {
                 </p>
                 
                 <div className="flex flex-wrap gap-2">
-                  {post.tags.map((tag, index) => (
+                  {post.tags && post.tags.map((tag, index) => (
                     <Badge key={index} variant="secondary" className="text-xs">
                       {tag}
                     </Badge>
