@@ -55,6 +55,13 @@ const formatContent = (content: string) => {
     .replace(/<p>(<[h|u])/g, '$1')
     .replace(/(<\/[h|u]>)<\/p>/g, '$1');
 };
+
+const images = import.meta.glob('/src/assets/images/*', { eager: true, as: 'url' });
+
+const resolveImagePath = (imageName) => {
+  const imageKey = imageName.startsWith('/') ? imageName : `/${imageName}`;
+  return images[imageKey] || '';
+};
 ---
 
 <Layout title={`${post.title} - Valencia Cat Association`}>
@@ -65,7 +72,7 @@ const formatContent = (content: string) => {
     <section class="relative py-20 bg-gray-900 text-white overflow-hidden">
       <div 
         class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
-        style={`background-image: url(${import.meta.env.BASE_URL}${post.image})`}
+        style={`background-image: url(${resolveImagePath(post.image)})`}
       ></div>
       
       <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -127,9 +134,9 @@ const formatContent = (content: string) => {
         <div class="mt-16">
           <h2 class="text-2xl font-bold text-gray-900 mb-8">Related Articles</h2>
           <div class="grid md:grid-cols-2 gap-8">
-            {blogPosts.filter(p => p.id !== post.id).slice(0, 2).map((relatedPost) => (
+            {blogPosts.filter(p => p.slug !== post.slug).slice(0, 2).map((relatedPost) => (
               <a 
-                key={relatedPost.id}
+                key={relatedPost.slug}
                 href={`/blog/${relatedPost.slug}`}
                 class="group block"
               >
