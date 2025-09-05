@@ -5,6 +5,13 @@ import { Badge } from '@/components/ui/badge';
 import { loadBlogPosts, type BlogPost} from '@/lib/utils';
 import type { Language } from '@/lib/i18n';
 
+const images = import.meta.glob('/src/assets/images/*', { eager: true, as: 'url' });
+
+const resolveImagePath = (imageName: string) => {
+  const imageKey = imageName.startsWith('/') ? imageName : `/${imageName}`;
+  return images[imageKey] || '';
+};
+
 interface BlogProps {
   t: any;
   lang: Language;
@@ -40,7 +47,7 @@ export function Blog({ t, lang }: BlogProps) {
             <Card key={post.slug} className="group hover:shadow-xl transition-all duration-300 overflow-hidden border-0 shadow-lg">
               <div className="relative overflow-hidden">
                 <img
-                  src={`${import.meta.env.BASE_URL}${post.image}`}
+                  src={resolveImagePath(post.image)}
                   alt={post.title}
                   className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
