@@ -56,6 +56,7 @@ export const translations = {
       phone: 'Phone',
       email: 'Email',
       hours: 'Hours',
+      instagram: 'Instagram',
       form: {
         name: 'Name',
         email: 'Email',
@@ -121,6 +122,7 @@ export const translations = {
       phone: 'Teléfono',
       email: 'Correo',
       hours: 'Horarios',
+      instagram: 'Instagram',
       form: {
         name: 'Nombre',
         email: 'Correo',
@@ -186,6 +188,7 @@ export const translations = {
       phone: 'Telèfon',
       email: 'Correu',
       hours: 'Horaris',
+      instagram: 'Instagram',
       form: {
         name: 'Nom',
         email: 'Correu',

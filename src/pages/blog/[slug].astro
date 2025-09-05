@@ -56,6 +56,9 @@ const formatContent = (content: string) => {
     .replace(/(<\/[h|u]>)<\/p>/g, '$1');
 };
 
+// import.meta.glob() creates a mapping at build time between the original paths and the final processed URLs
+// On local it is the same, but when building images are optimized and hashed
+// e.g.: /src/assets/images/cat1.jpg -> /_astro_image_123abc.jpg
 const images = import.meta.glob('/src/assets/images/*', { eager: true, as: 'url' });
 
 const resolveImagePath = (imageName) => {

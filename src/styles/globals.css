@@ -61,6 +61,23 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground cursor-cat;
   }
+}
+@layer utilities {
+  .cursor-cat {
+    cursor: url("/jumping.png") 16 16, auto;
+  }
+
+  .cursor-cat-hover:hover {
+    cursor: url("/jumping.png") 16 16, auto;
+  }
+
+  .cursor-paw-hover:hover {
+    cursor: url("/paw.png") 16 16, auto;
+  }
+}
+
+button {
+  @apply cursor-paw-hover;
 }

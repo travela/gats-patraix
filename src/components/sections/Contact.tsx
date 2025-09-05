@@ -1,4 +1,4 @@
-import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Instagram } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -14,22 +14,27 @@ export function Contact({ t }: ContactProps) {
     {
       icon: MapPin,
       label: t.contact.address,
-      value: 'Carrer de València, 123\n46003 Valencia, Spain'
+      value: 'C.de Montesa, 13, Patraix, 46017 València, Spain'
     },
     {
       icon: Phone,
       label: t.contact.phone,
-      value: '+34 963 123 456'
+      value: '+34 610 741 828'
     },
     {
       icon: Mail,
       label: t.contact.email,
-      value: 'info@valenciacats.org'
+      value: 'patraixgats@gmail.com'
+    },
+    {
+      icon: Instagram,
+      label: t.contact.instagram,
+      value: '@gats_patraix'
     },
     {
       icon: Clock,
       label: t.contact.hours,
-      value: 'Mon-Fri: 9:00-18:00\nSat-Sun: 10:00-16:00'
+      value: 'Mon-Sat: 10:00-15:00, 18:00-20:30\nSun: 11:00-20:00'
     }
   ];
 
