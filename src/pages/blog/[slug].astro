@@ -67,7 +67,7 @@ const images = import.meta.glob('/src/assets/images/*', { eager: true, as: 'url'
     <section class="relative py-20 bg-gray-900 text-white overflow-hidden">
       <div 
         class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
-        style={`background-image: url(${post.image})`}
+        style={`background-image: url(/${post.image})`}
       ></div>
       
       <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
