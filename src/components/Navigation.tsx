@@ -54,7 +54,7 @@ export function Navigation({ t, lang, currentPath }: NavigationProps) {
           <div className="flex items-center space-x-2">
             <Heart className="w-8 h-8 text-orange-500 fill-current" />
             <span className="text-xl font-bold text-gray-900">
-              Valencia Cat Association
+              Asociación Gats Patraix
             </span>
           </div>
 

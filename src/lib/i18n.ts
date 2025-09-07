@@ -1,12 +1,12 @@
 export const languages = {
-  en: 'English',
   es: 'Español', 
-  ca: 'Català (Valencià)'
+  ca: 'Català (Valencià)',
+  en: 'English',
 } as const;
 
 export type Language = keyof typeof languages;
 
-export const defaultLang: Language = 'en';
+export const defaultLang: Language = 'es';
 
 export const translations = {
   en: {
@@ -19,8 +19,8 @@ export const translations = {
       donate: 'Donate'
     },
     hero: {
-      title: 'Saving Lives, One Cat at a Time',
-      subtitle: 'Valencia Cat Association is dedicated to rescuing, caring for, and finding loving homes for cats in need.',
+      title: 'They deserve to live well',
+      subtitle: 'We protect, care for, and manage stray cats in the Patraix area.',
       cta: 'Adopt Today',
       secondary: 'Learn More'
     },
@@ -72,7 +72,7 @@ export const translations = {
       newsletter: 'Newsletter',
       newsletterDesc: 'Subscribe to our newsletter for updates',
       subscribe: 'Subscribe',
-      copyright: '© 2024 Valencia Cat Association. All rights reserved.'
+      copyright: '© 2025 Asociación Gats Patraix. All rights reserved.'
     }
   },
   es: {
@@ -85,8 +85,8 @@ export const translations = {
       donate: 'Donar'
     },
     hero: {
-      title: 'Salvando Vidas, Un Gato a la Vez',
-      subtitle: 'La Asociación de Gatos de Valencia se dedica a rescatar, cuidar y encontrar hogares amorosos para gatos necesitados.',
+      title: 'Ellos merecen vivir bien',
+      subtitle: 'Protegemos, cuidamos y gestionamos a los gatos de la calle en la zona de Patraix',
       cta: 'Adopta Hoy',
       secondary: 'Saber Más'
     },
@@ -151,8 +151,8 @@ export const translations = {
       donate: 'Donar'
     },
     hero: {
-      title: 'Salvant Vides, Un Gat cada Vegada',
-      subtitle: 'L\'Associació de Gats de València es dedica a rescatar, cuidar i trobar llars amoroses per a gats necessitats.',
+      title: 'Ells mereixen viure bé',
+      subtitle: 'Protegim, cuidem i gestionem els gats del carrer a la zona de Patraix.',
       cta: 'Adopta Hui',
       secondary: 'Saber Més'
     },

@@ -27,7 +27,7 @@ export function LanguageSwitcher({ currentLang, currentPath }: LanguageSwitcherP
     // Remove current language from path if it exists
     const pathWithoutLang = currentPath.replace(/^\/[a-z]{2}/, '') || '/';
     // Add new language prefix (except for default language)
-    return lang === 'en' ? pathWithoutLang : `/${lang}${pathWithoutLang}`;
+    return lang === 'es' ? pathWithoutLang : `/${lang}${pathWithoutLang}`;
   };
 
   return (

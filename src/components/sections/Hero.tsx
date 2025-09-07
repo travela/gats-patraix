@@ -57,7 +57,7 @@ export function Hero({ t }: HeroProps) {
           <Button 
             size="lg" 
             variant="outline" 
-            className="border-white text-white hover:bg-white hover:text-gray-900 px-8 py-3 text-lg font-semibold"
+            className="border-white text-gray-900 hover:bg-white hover:bg-gray-200 px-8 py-3 text-lg font-semibold"
             onClick={() => scrollToSection('about')}
           >
             {t.hero.secondary}

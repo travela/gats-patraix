@@ -42,7 +42,7 @@ export function Footer({ t }: FooterProps) {
           <div className="md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
               <Heart className="w-8 h-8 text-orange-500 fill-current" />
-              <span className="text-xl font-bold">Valencia Cat Association</span>
+              <span className="text-xl font-bold">Asociación Gats Patraix</span>
             </div>
             <p className="text-gray-300 mb-6 max-w-md">
               {t.footer.description}
