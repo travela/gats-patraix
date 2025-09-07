@@ -77,16 +77,14 @@ export function Blog({ t, lang }: BlogProps) {
               </CardContent>
               
               <CardFooter className="p-6 pt-0">
-                <Button 
-                  variant="outline" 
-                  className="w-full group-hover:bg-orange-500 group-hover:text-white group-hover:border-orange-500 transition-all"
-                  onClick={() => {
-                    window.location.href = `/blog/${post.slug}`;
-                  }}
+                <a 
+                  href={`/blog/${post.slug}`} 
+                  className="w-full inline-flex items-center justify-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-orange-500 hover:text-white hover:border-orange-500 transition-all"
+                  aria-label={`${t.blog.readMore} ${post.title}`}
                 >
                   {t.blog.readMore}
                   <ArrowRight className="ml-2 w-4 h-4" />
-                </Button>
+                </a>
               </CardFooter>
             </Card>
           ))}
