@@ -24,8 +24,8 @@ export function LanguageSwitcher({ currentLang, currentPath }: LanguageSwitcherP
   }, []);
 
   const getLocalizedPath = (lang: Language) => {
-    // Remove current language from path if it exists
-    const pathWithoutLang = currentPath.replace(/^\/[a-z]{2}/, '') || '/';
+    // Remove current language prefix from path if it exists (e.g. /ca/blog/foo -> /blog/foo)
+    const pathWithoutLang = currentPath.replace(/^\/[a-z]{2}(?=\/|$)/, '') || '/';
     // Add new language prefix (except for default language)
     return lang === 'es' ? pathWithoutLang : `/${lang}${pathWithoutLang}`;
   };

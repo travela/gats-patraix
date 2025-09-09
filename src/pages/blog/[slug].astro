@@ -34,7 +34,7 @@ const formatDate = (dateString: string, lang: Language) => {
 };
 
 const getBackUrl = () => {
-  return currentLang === 'en' ? '/#blog' : `/${currentLang}/#blog`;
+  return currentLang === 'es' ? '/#blog' : `/${currentLang}/#blog`;
 };
 
 // Convert markdown-style content to HTML
@@ -68,7 +68,7 @@ const resolveImagePath = (imageName) => {
 ---
 
 <Layout title={`${post.title} - Asociación Gats Patraix`}>
-  <Navigation t={t} lang={currentLang} currentPath={Astro.url.pathname} client:load />
+  <Navigation t={t} lang={currentLang} currentPath={Astro.url.pathname} isBlogPage={true} client:load />
   
   <main class="pt-20">
     <!-- Hero Section -->

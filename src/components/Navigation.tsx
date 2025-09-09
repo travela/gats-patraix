@@ -4,13 +4,15 @@ import { Button } from '@/components/ui/button';
 import { LanguageSwitcher } from './LanguageSwitcher';
 import type { Language } from '@/lib/i18n';
 
+
 interface NavigationProps {
   t: any;
   lang: Language;
   currentPath: string;
+  isBlogPage?: boolean;
 }
 
-export function Navigation({ t, lang, currentPath }: NavigationProps) {
+export function Navigation({ t, lang, currentPath, isBlogPage = false }: NavigationProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -61,21 +63,40 @@ export function Navigation({ t, lang, currentPath }: NavigationProps) {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <button
-                key={item.key}
-                onClick={() => scrollToSection(item.href.substring(1))}
-                className="text-gray-700 hover:text-orange-600 transition-colors font-medium"
-              >
-                {t.nav[item.key]}
-              </button>
+              isBlogPage ? (
+                <a
+                  key={item.key}
+                  href={`/${lang !== 'es' ? lang + '/' : ''}${item.href}`}
+                  className="text-gray-700 hover:text-orange-600 transition-colors font-medium"
+                >
+                  {t.nav[item.key]}
+                </a>
+              ) : (
+                <button
+                  key={item.key}
+                  onClick={() => scrollToSection(item.href.substring(1))}
+                  className="text-gray-700 hover:text-orange-600 transition-colors font-medium"
+                >
+                  {t.nav[item.key]}
+                </button>
+              )
             ))}
-            <Button 
-              size="sm" 
-              className="bg-orange-500 hover:bg-orange-600"
-              onClick={() => scrollToSection('contact')}
-            >
-              {t.nav.donate}
-            </Button>
+            {isBlogPage ? (
+              <a
+                href={`/${lang !== 'es' ? lang + '/' : ''}#contact`}
+                className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded text-sm font-medium"
+              >
+                {t.nav.donate}
+              </a>
+            ) : (
+              <Button 
+                size="sm" 
+                className="bg-orange-500 hover:bg-orange-600"
+                onClick={() => scrollToSection('contact')}
+              >
+                {t.nav.donate}
+              </Button>
+            )}
             <LanguageSwitcher currentLang={lang} currentPath={currentPath} />
           </div>
 
@@ -97,20 +118,39 @@ export function Navigation({ t, lang, currentPath }: NavigationProps) {
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-gray-200">
               {navItems.map((item) => (
-                <button
-                  key={item.key}
-                  onClick={() => scrollToSection(item.href.substring(1))}
-                  className="block w-full text-left px-3 py-2 text-gray-700 hover:text-orange-600 hover:bg-orange-50 rounded-md transition-colors"
-                >
-                  {t.nav[item.key]}
-                </button>
+                isBlogPage ? (
+                  <a
+                    key={item.key}
+                    href={`/${lang !== 'es' ? lang + '/' : ''}${item.href}`}
+                    className="block w-full text-left px-3 py-2 text-gray-700 hover:text-orange-600 hover:bg-orange-50 rounded-md transition-colors"
+                  >
+                    {t.nav[item.key]}
+                  </a>
+                ) : (
+                  <button
+                    key={item.key}
+                    onClick={() => scrollToSection(item.href.substring(1))}
+                    className="block w-full text-left px-3 py-2 text-gray-700 hover:text-orange-600 hover:bg-orange-50 rounded-md transition-colors"
+                  >
+                    {t.nav[item.key]}
+                  </button>
+                )
               ))}
-              <Button 
-                className="w-full mt-2 bg-orange-500 hover:bg-orange-600"
-                onClick={() => scrollToSection('contact')}
-              >
-                {t.nav.donate}
-              </Button>
+              {isBlogPage ? (
+                <a
+                  href={`/${lang !== 'es' ? lang + '/' : ''}#contact`}
+                  className="w-full mt-2 bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded text-center block"
+                >
+                  {t.nav.donate}
+                </a>
+              ) : (
+                <Button 
+                  className="w-full mt-2 bg-orange-500 hover:bg-orange-600"
+                  onClick={() => scrollToSection('contact')}
+                >
+                  {t.nav.donate}
+                </Button>
+              )}
             </div>
           </div>
         )}

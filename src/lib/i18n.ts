@@ -138,7 +138,7 @@ export const translations = {
       newsletter: 'Boletín',
       newsletterDesc: 'Suscríbete a nuestro boletín para actualizaciones',
       subscribe: 'Suscribirse',
-      copyright: '© 2024 Asociación de Gatos de Valencia. Todos los derechos reservados.'
+      copyright: '© 2025 Asociación de Gatos de Valencia. Todos los derechos reservados.'
     }
   },
   ca: {
@@ -204,7 +204,7 @@ export const translations = {
       newsletter: 'Butlletí',
       newsletterDesc: 'Subscriu-te al nostre butlletí per a actualitzacions',
       subscribe: 'Subscriure\'s',
-      copyright: '© 2024 Associació de Gats de València. Tots els drets reservats.'
+      copyright: '© 2025 Associació de Gats de València. Tots els drets reservats.'
     }
   }
 } as const;
