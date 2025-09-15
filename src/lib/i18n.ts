@@ -51,6 +51,10 @@ export const translations = {
     },
     contact: {
       title: 'Get in Touch',
+      donateTitle: 'Support Our Cause',
+      bankName: 'Bank Name',
+      bankAccount: 'Account Number',
+      iban: 'IBAN',
       subtitle: 'Ready to adopt or volunteer? Contact us today!',
       address: 'Address',
       phone: 'Phone',
@@ -117,6 +121,10 @@ export const translations = {
     },
     contact: {
       title: 'Contáctanos',
+      donateTitle: 'Apoya Nuestra Causa',
+      bankName: 'Nombre del Banco',
+      bankAccount: 'Número de Cuenta',
+      iban: 'IBAN',
       subtitle: '¿Listo para adoptar o ser voluntario? ¡Contáctanos hoy!',
       address: 'Dirección',
       phone: 'Teléfono',
@@ -183,6 +191,10 @@ export const translations = {
     },
     contact: {
       title: 'Contacta\'ns',
+      donateTitle: 'Dóna Suport a la Nostra Causa',
+      bankName: 'Nom del Banc',
+      bankAccount: 'Número de Compte',
+      iban: 'IBAN',
       subtitle: 'Preparat per adoptar o ser voluntari? Contacta\'ns hui!',
       address: 'Direcció',
       phone: 'Telèfon',

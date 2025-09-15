@@ -79,43 +79,24 @@ export function Contact({ t }: ContactProps) {
             </div>
           </div>
 
-          {/* Contact Form */}
+          {/* Donation Bank Info */}
           <Card className="border-0 shadow-lg">
-            <CardContent className="p-8">
-              <form className="space-y-6">
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <div>
-                    <Label htmlFor="name">{t.contact.form.name}</Label>
-                    <Input id="name" name="name" className="mt-1" />
-                  </div>
-                  <div>
-                    <Label htmlFor="email">{t.contact.form.email}</Label>
-                    <Input id="email" name="email" type="email" className="mt-1" />
-                  </div>
-                </div>
-                
+            <CardContent className="p-6">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">{t.contact.donateTitle}</h3>
+              <div className="space-y-4">
                 <div>
-                  <Label htmlFor="subject">{t.contact.form.subject}</Label>
-                  <Input id="subject" name="subject" className="mt-1" />
+                  <Label className="font-semibold text-gray-900">{t.contact.bankName}</Label>
+                  <p className="text-gray-700">CAIXA POPULAR</p>
                 </div>
-                
                 <div>
-                  <Label htmlFor="message">{t.contact.form.message}</Label>
-                  <Textarea 
-                    id="message" 
-                    name="message" 
-                    rows={5} 
-                    className="mt-1 resize-none" 
-                  />
+                  <Label className="font-semibold text-gray-900">{t.contact.iban}</Label>
+                  <p className="text-gray-700">ES7431590010522677499721</p>
                 </div>
-                
-                <Button 
-                  type="submit" 
-                  className="w-full bg-orange-500 hover:bg-orange-600 py-3 text-lg font-semibold"
-                >
-                  {t.contact.form.send}
-                </Button>
-              </form>
+                <div>
+                  <Label className="font-semibold text-gray-900">Bizum</Label>
+                  <p className="text-gray-700">CÓDIGO BIZUM 07731</p>
+                </div>
+              </div>
             </CardContent>
           </Card>
         </div>
