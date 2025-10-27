@@ -1,3 +1,7 @@
+# Initial funny version
+
+This branch is used to deploy and showcase my initial version of the project when I was just playing around with Astro and cursors.
+
 # Astro Starter Kit: Basics
 
 ```sh
