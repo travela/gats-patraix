@@ -34,6 +34,7 @@ export interface Cat {
   personality: string[];
   description: string;
   image: string;
+  publishedAt: string;
   isSpecialNeeds?: boolean;
   slug?: string;
   link?: string;

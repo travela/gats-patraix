@@ -19,3 +19,23 @@ collections:
       - { label: "Excerpt", name: "excerpt", widget: "markdown" }
       - { label: "Tags (comma separated)", name: "tags", widget: "list" }
       - { label: "Author", name: "author", widget: "string" }
+  - name: "cats"
+    label: "Cats"
+    folder: "src/content/cats"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "ID", name: "id", widget: "string" }
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Age", name: "age", widget: "string" }
+      - { label: "Gender", name: "gender", widget: "select", options: ["male", "female"] }
+      - label: "Personality"
+        name: "personality"
+        widget: "list"
+        hint: "One trait per line"
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Instagram Link", name: "link", widget: "string", required: false }
+      - { label: "Published At", name: "publishedAt", widget: "datetime", required: false }
+      - { label: "Special Needs", name: "isSpecialNeeds", widget: "boolean", required: false }
+      - { label: "Slug", name: "slug", widget: "string", required: false }

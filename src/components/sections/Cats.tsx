@@ -1,4 +1,5 @@
 import { Calendar, User, ExternalLink } from 'lucide-react';
+import { format } from 'date-fns';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -21,6 +22,7 @@ interface CatItem {
   personality: string[];
   description: string;
   image: string;
+  publishedAt?: string;
   isSpecialNeeds?: boolean;
   link?: string;
 }
@@ -105,9 +107,9 @@ function Cats({ t, cats }: CatsProps) {
                         {cat.description}
                       </DialogDescription>
                     </DialogHeader>
-                    <div className="mt-4 flex items-center justify-between">
-                      <div className="text-sm text-gray-600">{t.cats.age}: {cat.age}</div>
-                      <div className="text-sm text-gray-600">{t.cats.gender}: {cat.gender === 'male' ? 'Male' : 'Female'}</div>
+                    <div className="mt-4 flex items-center justify-between text-sm text-gray-600">
+                      <div>{t.cats.age}: {cat.age}</div>
+                      <div>{t.cats.gender}: {cat.gender === 'male' ? 'Male' : 'Female'}</div>
                     </div>
                     <div className="mt-4">
                       <a href={cat.link ?? 'https://www.instagram.com/gats_patraix/'} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-sm text-orange-500 hover:underline">
@@ -115,6 +117,11 @@ function Cats({ t, cats }: CatsProps) {
                         {t.contact.instagram ?? 'Instagram'}
                       </a>
                     </div>
+                                        {cat.publishedAt && (
+                      <div className="mt-2 text-sm text-gray-500">
+                        {`Published on ${format(new Date(cat.publishedAt), 'PPP')}`}
+                      </div>
+                    )}
                     <DialogFooter className="mt-6">
                     </DialogFooter>
                   </DialogContent>

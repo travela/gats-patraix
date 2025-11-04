@@ -15,6 +15,7 @@ description: |
 image: 'src/assets/images/gym.webp'
 slug: 'gym'
 link: 'https://www.instagram.com/gats_patraix/p/DMvuQFrNnXK/'
+publishedAt: '2025-11-04T19:50:00.000+08:00'
 ---
 
 Este pequeño saltarín ya está preparado para encontrar una familia. Como veis, ya controla todo el barrio.

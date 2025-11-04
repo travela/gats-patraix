@@ -21,6 +21,7 @@ const catsCollection = defineCollection({
     personality: z.array(z.string()),
     description: z.string(),
     image: z.string(),
+    publishedAt: z.string(),
     isSpecialNeeds: z.boolean().optional(),
     slug: z.string().optional(),
   }),
@@ -28,4 +29,5 @@ const catsCollection = defineCollection({
 
 export const collections = {
   blog: blogCollection,
+  cats: catsCollection,
 };
