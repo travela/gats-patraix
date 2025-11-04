@@ -25,3 +25,26 @@ export interface BlogPost {
   tags: string[];
   slug: string;
 }
+
+export interface Cat {
+  id: string;
+  name: string;
+  age: string;
+  gender: 'male' | 'female';
+  personality: string[];
+  description: string;
+  image: string;
+  isSpecialNeeds?: boolean;
+  slug?: string;
+  link?: string;
+}
+
+export const loadCats = () => {
+  const catsRaw: Record<string, CatModule> = import.meta.glob('/src/content/cats/**/*.md', { eager: true });
+  return Object.values(catsRaw).map((c) => c.frontmatter as Cat);
+};
+
+interface CatModule {
+  frontmatter: Cat;
+  default: any;
+}

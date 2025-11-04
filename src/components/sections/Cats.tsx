@@ -2,13 +2,28 @@ import { Calendar, User } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { cats } from '@/data/cats';
+import { loadCats } from '@/lib/utils';
+
+interface CatItem {
+  id: string;
+  name: string;
+  age: string;
+  gender: 'male' | 'female';
+  personality: string[];
+  description: string;
+  image: string;
+  isSpecialNeeds?: boolean;
+  link?: string;
+}
 
 interface CatsProps {
   t: any;
+  cats?: CatItem[];
 }
 
-export function Cats({ t }: CatsProps) {
+function Cats({ t, cats }: CatsProps) {
+  // If cats not provided via props, load from content at build/server time
+  const catsData: CatItem[] = loadCats();
   return (
     <section id="cats" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -22,7 +37,7 @@ export function Cats({ t }: CatsProps) {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {cats.map((cat) => (
+          {catsData.map((cat) => (
             <Card key={cat.id} className="group hover:shadow-xl transition-all duration-300 overflow-hidden border-0 shadow-lg">
               <div className="relative overflow-hidden">
                 <img
@@ -67,9 +82,19 @@ export function Cats({ t }: CatsProps) {
               </CardContent>
               
               <CardFooter className="p-6 pt-0">
-                <Button className="w-full bg-orange-500 hover:bg-orange-600">
-                  {t.cats.adoptBtn}
-                </Button>
+                {cat.link ? (
+                  <a href={cat.link} target="_blank" rel="noopener noreferrer" className="w-full block">
+                    <Button className="w-full bg-orange-500 hover:bg-orange-600">
+                      {t.cats.adoptBtn}
+                    </Button>
+                  </a>
+                ) : (
+                  <a href="https://www.instagram.com/gats_patraix/p/DM5wm8gN2IO/" target="_blank" rel="noopener noreferrer" className="w-full block">
+                    <Button className="w-full bg-orange-500 hover:bg-orange-600">
+                      {t.cats.adoptBtn}
+                    </Button>
+                  </a>
+                )}
               </CardFooter>
             </Card>
           ))}
@@ -78,3 +103,6 @@ export function Cats({ t }: CatsProps) {
     </section>
   );
 }
+
+export default Cats;
+export { Cats };
