@@ -38,7 +38,7 @@ export const translations = {
     cats: {
       title: 'Cats Looking for Homes',
       subtitle: 'Meet our wonderful cats ready for adoption',
-  adoptBtn: 'View on Instagram',
+  adoptBtn: 'Show more',
       age: 'Age',
       gender: 'Gender',
       personality: 'Personality'
@@ -108,7 +108,7 @@ export const translations = {
     cats: {
       title: 'Gatos Buscando Hogar',
       subtitle: 'Conoce nuestros maravillosos gatos listos para adopción',
-  adoptBtn: 'Ver en Instagram',
+  adoptBtn: 'Ver más',
       age: 'Edad',
       gender: 'Género',
       personality: 'Personalidad'
@@ -178,7 +178,7 @@ export const translations = {
     cats: {
       title: 'Gats Buscant Llar',
       subtitle: 'Coneix els nostres meravellosos gats preparats per a adopció',
-  adoptBtn: 'Veure a Instagram',
+  adoptBtn: 'Mostra més',
       age: 'Edat',
       gender: 'Gènere',
       personality: 'Personalitat'

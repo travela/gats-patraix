@@ -2,15 +2,9 @@ import { Calendar, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { loadBlogPosts, type BlogPost} from '@/lib/utils';
+import { loadBlogPosts, resolveImagePath, type BlogPost} from '@/lib/utils';
 import type { Language } from '@/lib/i18n';
 
-const images = import.meta.glob('/src/assets/images/*', { eager: true, as: 'url' });
-
-const resolveImagePath = (imageName: string) => {
-  const imageKey = imageName.startsWith('/') ? imageName : `/${imageName}`;
-  return images[imageKey] || '';
-};
 
 interface BlogProps {
   t: any;

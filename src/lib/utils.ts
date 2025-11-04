@@ -48,3 +48,12 @@ interface CatModule {
   frontmatter: Cat;
   default: any;
 }
+
+const images = import.meta.glob('/src/assets/images/*', { eager: true, as: 'url' });
+
+const resolveImagePath = (imageName: string) => {
+  const imageKey = imageName.startsWith('/') ? imageName : `/${imageName}`;
+  return images[imageKey] || '';
+};
+
+export { resolveImagePath };

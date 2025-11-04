@@ -1,8 +1,17 @@
-import { Calendar, User } from 'lucide-react';
+import { Calendar, User, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { loadCats } from '@/lib/utils';
+import { loadCats, resolveImagePath } from '@/lib/utils';
+import {
+  Dialog,
+  DialogTrigger,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+  DialogFooter,
+} from '@/components/ui/dialog';
 
 interface CatItem {
   id: string;
@@ -20,6 +29,7 @@ interface CatsProps {
   t: any;
   cats?: CatItem[];
 }
+
 
 function Cats({ t, cats }: CatsProps) {
   // If cats not provided via props, load from content at build/server time
@@ -41,7 +51,7 @@ function Cats({ t, cats }: CatsProps) {
             <Card key={cat.id} className="group hover:shadow-xl transition-all duration-300 overflow-hidden border-0 shadow-lg">
               <div className="relative overflow-hidden">
                 <img
-                  src={cat.image}
+                  src={resolveImagePath(cat.image)}
                   alt={cat.name}
                   className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
@@ -82,19 +92,33 @@ function Cats({ t, cats }: CatsProps) {
               </CardContent>
               
               <CardFooter className="p-6 pt-0">
-                {cat.link ? (
-                  <a href={cat.link} target="_blank" rel="noopener noreferrer" className="w-full block">
+                <Dialog>
+                  <DialogTrigger asChild>
                     <Button className="w-full bg-orange-500 hover:bg-orange-600">
                       {t.cats.adoptBtn}
                     </Button>
-                  </a>
-                ) : (
-                  <a href="https://www.instagram.com/gats_patraix/p/DM5wm8gN2IO/" target="_blank" rel="noopener noreferrer" className="w-full block">
-                    <Button className="w-full bg-orange-500 hover:bg-orange-600">
-                      {t.cats.adoptBtn}
-                    </Button>
-                  </a>
-                )}
+                  </DialogTrigger>
+                  <DialogContent>
+                    <DialogHeader>
+                      <DialogTitle>{cat.name}</DialogTitle>
+                      <DialogDescription className="mt-2">
+                        {cat.description}
+                      </DialogDescription>
+                    </DialogHeader>
+                    <div className="mt-4 flex items-center justify-between">
+                      <div className="text-sm text-gray-600">{t.cats.age}: {cat.age}</div>
+                      <div className="text-sm text-gray-600">{t.cats.gender}: {cat.gender === 'male' ? 'Male' : 'Female'}</div>
+                    </div>
+                    <div className="mt-4">
+                      <a href={cat.link ?? 'https://www.instagram.com/gats_patraix/'} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-sm text-orange-500 hover:underline">
+                        <ExternalLink className="w-4 h-4 mr-2" />
+                        {t.contact.instagram ?? 'Instagram'}
+                      </a>
+                    </div>
+                    <DialogFooter className="mt-6">
+                    </DialogFooter>
+                  </DialogContent>
+                </Dialog>
               </CardFooter>
             </Card>
           ))}
