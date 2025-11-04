@@ -71,12 +71,12 @@ export function Contact({ t }: ContactProps) {
             </div>
 
             {/* Map placeholder */}
-            <div className="bg-gray-200 rounded-xl h-64 flex items-center justify-center">
+{/*             <div className="bg-gray-200 rounded-xl h-64 flex items-center justify-center">
               <div className="text-center">
                 <MapPin className="w-12 h-12 text-gray-400 mx-auto mb-2" />
                 <p className="text-gray-500">Interactive Map</p>
               </div>
-            </div>
+            </div> */}
           </div>
 
           {/* Donation Bank Info */}

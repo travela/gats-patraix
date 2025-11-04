@@ -58,7 +58,7 @@ export function Hero({ t }: HeroProps) {
             size="lg" 
             variant="outline" 
             className="border-white text-gray-900 hover:bg-white hover:bg-gray-200 px-8 py-3 text-lg font-semibold"
-            onClick={() => scrollToSection('about')}
+            onClick={() => scrollToSection('blog')}
           >
             {t.hero.secondary}
           </Button>

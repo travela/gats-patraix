@@ -21,17 +21,16 @@ export function Footer({ t }: FooterProps) {
 
   const quickLinks = [
     { key: 'home', action: () => scrollToSection('hero') },
-    { key: 'about', action: () => scrollToSection('about') },
+    /* { key: 'about', action: () => scrollToSection('about') }, */
     { key: 'cats', action: () => scrollToSection('cats') },
     { key: 'blog', action: () => scrollToSection('blog') },
     { key: 'contact', action: () => scrollToSection('contact') }
   ];
 
   const socialLinks = [
-    { icon: Facebook, href: '#', label: 'Facebook' },
-    { icon: Instagram, href: '#', label: 'Instagram' },
-    { icon: Twitter, href: '#', label: 'Twitter' },
-    { icon: Mail, href: 'mailto:info@valenciacats.org', label: 'Email' }
+    { icon: Facebook, href: 'https://www.facebook.com/p/Asociaci%C3%B3n-Patraix-Gats-100064322546778/', label: 'Facebook' },
+    { icon: Instagram, href: 'https://www.instagram.com/gats_patraix/', label: 'Instagram' },
+
   ];
 
   return (
@@ -82,7 +81,7 @@ export function Footer({ t }: FooterProps) {
           </div>
 
           {/* Newsletter */}
-          <div>
+{/*           <div>
             <h3 className="text-lg font-semibold mb-4">{t.footer.newsletter}</h3>
             <p className="text-gray-300 text-sm mb-4">
               {t.footer.newsletterDesc}
@@ -97,7 +96,7 @@ export function Footer({ t }: FooterProps) {
                 {t.footer.subscribe}
               </Button>
             </div>
-          </div>
+          </div> */}
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center">

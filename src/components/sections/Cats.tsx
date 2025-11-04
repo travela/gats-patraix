@@ -101,7 +101,7 @@ function Cats({ t, cats }: CatsProps) {
                   <DialogContent>
                     <DialogHeader>
                       <DialogTitle>{cat.name}</DialogTitle>
-                      <DialogDescription className="mt-2">
+                      <DialogDescription className="mt-2 whitespace-pre-wrap text-sm text-gray-700">
                         {cat.description}
                       </DialogDescription>
                     </DialogHeader>

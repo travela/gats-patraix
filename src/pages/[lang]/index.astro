@@ -25,7 +25,7 @@ const t = useTranslations(currentLang);
   <Navigation t={t} lang={currentLang} currentPath={Astro.url.pathname} client:load />
   <main>
     <Hero t={t} client:load />
-    <About t={t} client:load />
+    <!-- <About t={t} client:load /> -->
     <Cats t={t} client:load />
     <Blog t={t} lang={currentLang} client:load />
     <Contact t={t} client:load />
