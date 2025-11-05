@@ -3,7 +3,7 @@ import { format } from 'date-fns';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { loadCats, resolveImagePath } from '@/lib/utils';
+import { formatDate, loadCats, resolveImagePath, type Cat } from '@/lib/utils';
 import {
   Dialog,
   DialogTrigger,
@@ -13,29 +13,18 @@ import {
   DialogDescription,
   DialogFooter,
 } from '@/components/ui/dialog';
+import type { Language } from '@/lib/i18n';
 
-interface CatItem {
-  id: string;
-  name: string;
-  age: string;
-  gender: 'male' | 'female';
-  personality: string[];
-  description: string;
-  image: string;
-  publishedAt?: string;
-  isSpecialNeeds?: boolean;
-  link?: string;
-}
 
 interface CatsProps {
   t: any;
-  cats?: CatItem[];
+  lang: Language;
 }
 
 
-function Cats({ t, cats }: CatsProps) {
+function Cats({ t, lang }: CatsProps) {
   // If cats not provided via props, load from content at build/server time
-  const catsData: CatItem[] = loadCats();
+  const catsData: Cat[] = loadCats();
   return (
     <section id="cats" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -69,7 +58,7 @@ function Cats({ t, cats }: CatsProps) {
                 
                 <div className="flex items-center text-sm text-gray-600 mb-2">
                   <Calendar className="w-4 h-4 mr-2" />
-                  {t.cats.age}: {cat.age}
+                  {t.cats.age}: {cat.age} {t.cats.years}
                 </div>
                 
                 <div className="flex items-center text-sm text-gray-600 mb-3">
@@ -108,8 +97,8 @@ function Cats({ t, cats }: CatsProps) {
                       </DialogDescription>
                     </DialogHeader>
                     <div className="mt-4 flex items-center justify-between text-sm text-gray-600">
-                      <div>{t.cats.age}: {cat.age}</div>
-                      <div>{t.cats.gender}: {cat.gender === 'male' ? 'Male' : 'Female'}</div>
+                      <div>{t.cats.age}: {cat.age} {t.cats.years}</div>
+                      <div>{t.cats.gender}: {cat.gender === 'male' ? t.cats.male : t.cats.female}</div>
                     </div>
                     <div className="mt-4">
                       <a href={cat.link ?? 'https://www.instagram.com/gats_patraix/'} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-sm text-orange-500 hover:underline">
@@ -117,9 +106,10 @@ function Cats({ t, cats }: CatsProps) {
                         {t.contact.instagram ?? 'Instagram'}
                       </a>
                     </div>
-                                        {cat.publishedAt && (
+                    {cat.publishedAt && (
                       <div className="mt-2 text-sm text-gray-500">
-                        {`Published on ${format(new Date(cat.publishedAt), 'PPP')}`}
+                        {t.blog.publishedOn} {formatDate(cat.publishedAt, lang)}
+
                       </div>
                     )}
                     <DialogFooter className="mt-6">

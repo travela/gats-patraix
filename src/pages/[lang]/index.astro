@@ -26,7 +26,7 @@ const t = useTranslations(currentLang);
   <main>
     <Hero t={t} client:load />
     <!-- <About t={t} client:load /> -->
-    <Cats t={t} client:load />
+    <Cats t={t} lang={currentLang} client:load />
     <Blog t={t} lang={currentLang} client:load />
     <Contact t={t} client:load />
   </main>

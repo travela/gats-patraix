@@ -18,7 +18,7 @@ const t = useTranslations(defaultLang);
   <main>
     <Hero t={t} />
     <!-- <About t={t} /> -->
-    <Cats t={t} client:load />
+    <Cats t={t} lang={defaultLang} client:load />
     <Blog t={t} lang={defaultLang} />
     <Contact t={t} />
   </main>

@@ -38,16 +38,20 @@ export const translations = {
     cats: {
       title: 'Cats Looking for Homes',
       subtitle: 'Meet our wonderful cats ready for adoption',
-  adoptBtn: 'Show more',
+      adoptBtn: 'Show more',
       age: 'Age',
       gender: 'Gender',
-      personality: 'Personality'
+      personality: 'Personality',
+      years: 'years',
+      male: 'Male',
+      female: 'Female'
     },
     blog: {
       title: 'Latest News & Stories',
       subtitle: 'Stay updated with our rescue stories and cat care tips',
       readMore: 'Read More',
-      publishedOn: 'Published on'
+      publishedOn: 'Published on',
+      by: 'by'
     },
     contact: {
       title: 'Get in Touch',
@@ -108,16 +112,20 @@ export const translations = {
     cats: {
       title: 'Gatos Buscando Hogar',
       subtitle: 'Conoce nuestros maravillosos gatos listos para adopción',
-  adoptBtn: 'Ver más',
+      adoptBtn: 'Ver más',
       age: 'Edad',
       gender: 'Género',
-      personality: 'Personalidad'
+      personality: 'Personalidad',
+      years: 'años',
+      male: 'Masculino',
+      female: 'Femenino'
     },
     blog: {
       title: 'Últimas Noticias e Historias',
       subtitle: 'Mantente actualizado con nuestras historias de rescate y consejos de cuidado felino',
       readMore: 'Leer Más',
-      publishedOn: 'Publicado el'
+      publishedOn: 'Publicado el',
+      by: 'por'  
     },
     contact: {
       title: 'Contáctanos',
@@ -178,16 +186,20 @@ export const translations = {
     cats: {
       title: 'Gats Buscant Llar',
       subtitle: 'Coneix els nostres meravellosos gats preparats per a adopció',
-  adoptBtn: 'Mostra més',
+      adoptBtn: 'Mostra més',
       age: 'Edat',
       gender: 'Gènere',
-      personality: 'Personalitat'
+      personality: 'Personalitat',
+      years: 'anys',
+      male: 'Mascle',
+      female: 'Femení'
     },
     blog: {
       title: 'Últimes Notícies i Històries',
       subtitle: 'Mantén-te actualitzat amb les nostres històries de rescat i consells de cura felina',
       readMore: 'Llegir Més',
-      publishedOn: 'Publicat el'
+      publishedOn: 'Publicat el',
+      by: 'per'
     },
     contact: {
       title: 'Contacta\'ns',

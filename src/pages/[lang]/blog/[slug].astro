@@ -5,7 +5,7 @@ import { Footer } from '../../../components/Footer';
 import { useTranslations, defaultLang, getLangFromUrl, type Language } from '../../../lib/i18n';
 import { Calendar, ArrowLeft, Tag } from 'lucide-react';
 import '../../../styles/globals.css';
-import { loadBlogPosts } from '@/lib/utils';
+import { formatDate, loadBlogPosts } from '@/lib/utils';
 
 
 export function getStaticPaths() {
@@ -24,14 +24,6 @@ const { post } = Astro.props;
 const currentLang = getLangFromUrl(Astro.url);
 const t = useTranslations(currentLang);
 
-const formatDate = (dateString: string, lang: Language) => {
-  const date = new Date(dateString);
-  return date.toLocaleDateString(lang === 'ca' ? 'ca-ES' : lang === 'es' ? 'es-ES' : 'en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
-  });
-};
 
 const getBackUrl = () => {
   return currentLang === 'es' ? '/#blog' : `/${currentLang}/#blog`;
@@ -89,7 +81,7 @@ const resolveImagePath = (imageName) => {
         
         <div class="flex items-center text-sm text-gray-300 mb-4">
           <Calendar class="w-4 h-4 mr-2" />
-          {t.blog.publishedOn} {formatDate(post.publishedAt, currentLang)} by {post.author}
+          {t.blog.publishedOn} {formatDate(post.publishedAt, currentLang)} {t.blog.by} {post.author}
         </div>
         
         <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">

@@ -1,5 +1,6 @@
 import { clsx, type ClassValue } from 'clsx';
 import { twMerge } from 'tailwind-merge';
+import type { Language } from './i18n';
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -29,7 +30,7 @@ export interface BlogPost {
 export interface Cat {
   id: string;
   name: string;
-  age: string;
+  age: number;
   gender: 'male' | 'female';
   personality: string[];
   description: string;
@@ -57,4 +58,14 @@ const resolveImagePath = (imageName: string) => {
   return images[imageKey] || '';
 };
 
-export { resolveImagePath };
+
+const formatDate = (dateString: string, lang: Language) => {
+  const date = new Date(dateString);
+  return date.toLocaleDateString(lang === 'ca' ? 'ca-ES' : lang === 'es' ? 'es-ES' : 'en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  });
+};
+
+export { resolveImagePath, formatDate };
