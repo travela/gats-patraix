@@ -19,7 +19,7 @@ export const translations = {
       donate: 'Donate'
     },
     hero: {
-      title: 'They deserve to live well',
+      title: 'They deserve a home too',
       subtitle: 'We protect, care for, and manage stray cats in the Patraix area.',
       cta: 'Adopt Today',
       secondary: 'Learn More'
@@ -59,7 +59,7 @@ export const translations = {
       bankName: 'Bank Name',
       bankAccount: 'Account Number',
       iban: 'IBAN',
-      subtitle: 'Ready to adopt or volunteer? Contact us today!',
+      subtitle: 'Ready to adopt or volunteer? Get in touch with us, there are many ways to help!',
       address: 'Address',
       phone: 'Phone',
       email: 'Email',
@@ -74,7 +74,7 @@ export const translations = {
       }
     },
     footer: {
-      description: 'Valencia Cat Association - Saving lives, one cat at a time.',
+      description: 'Asociación Gats Patraix - They deserve a home too.',
       links: 'Quick Links',
       social: 'Follow Us',
       newsletter: 'Newsletter',
@@ -93,7 +93,7 @@ export const translations = {
       donate: 'Donar'
     },
     hero: {
-      title: 'Ellos merecen vivir bien',
+      title: 'Ellos también merecen un hogar',
       subtitle: 'Protegemos, cuidamos y gestionamos a los gatos de la calle en la zona de Patraix',
       cta: 'Adopta Hoy',
       secondary: 'Saber Más'
@@ -133,7 +133,7 @@ export const translations = {
       bankName: 'Nombre del Banco',
       bankAccount: 'Número de Cuenta',
       iban: 'IBAN',
-      subtitle: '¿Listo para adoptar o ser voluntario? ¡Contáctanos hoy!',
+      subtitle: '¿Te animas a adoptar o ser voluntario/a? ¡Contáctanos, hay muchas formas de ayudar!',
       address: 'Dirección',
       phone: 'Teléfono',
       email: 'Correo',
@@ -148,13 +148,13 @@ export const translations = {
       }
     },
     footer: {
-      description: 'Asociación de Gatos de Valencia - Salvando vidas, un gato a la vez.',
+      description: 'Asociación Gats Patraix - Ellos también merecen un hogar.',
       links: 'Enlaces Rápidos',
       social: 'Síguenos',
       newsletter: 'Boletín',
       newsletterDesc: 'Suscríbete a nuestro boletín para actualizaciones',
       subscribe: 'Suscribirse',
-      copyright: '© 2025 Asociación de Gatos de Valencia. Todos los derechos reservados.'
+      copyright: '© 2025 Asociación Gats Patraix. Todos los derechos reservados.'
     }
   },
   ca: {
@@ -167,7 +167,7 @@ export const translations = {
       donate: 'Donar'
     },
     hero: {
-      title: 'Ells mereixen viure bé',
+      title: 'Ells també mereixen una llar',
       subtitle: 'Protegim, cuidem i gestionem els gats del carrer a la zona de Patraix.',
       cta: 'Adopta Hui',
       secondary: 'Saber Més'
@@ -207,7 +207,7 @@ export const translations = {
       bankName: 'Nom del Banc',
       bankAccount: 'Número de Compte',
       iban: 'IBAN',
-      subtitle: 'Preparat per adoptar o ser voluntari? Contacta\'ns hui!',
+      subtitle: 'T\'animes a adoptar o ser voluntari/a? Contacta\'ns, hi ha moltes formes d\'ajudar!',
       address: 'Direcció',
       phone: 'Telèfon',
       email: 'Correu',
@@ -222,13 +222,13 @@ export const translations = {
       }
     },
     footer: {
-      description: 'Associació de Gats de València - Salvant vides, un gat cada vegada.',
+      description: 'Associació Gats Patraix - Ells també mereixen una llar.',
       links: 'Enllaços Ràpids',
       social: 'Segueix-nos',
       newsletter: 'Butlletí',
       newsletterDesc: 'Subscriu-te al nostre butlletí per a actualitzacions',
       subscribe: 'Subscriure\'s',
-      copyright: '© 2025 Associació de Gats de València. Tots els drets reservats.'
+      copyright: '© 2025 Associació Gats Patraix. Tots els drets reservats.'
     }
   }
 } as const;

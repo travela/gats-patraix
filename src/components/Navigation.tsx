@@ -40,8 +40,8 @@ export function Navigation({ t, lang, currentPath, isBlogPage = false }: Navigat
 
   const navItems = [
     { key: 'home', href: '#hero' },
-    { key: 'about', href: '#about' },
-    { key: 'cats', href: '#cats' },
+/*     { key: 'about', href: '#about' },
+ */    { key: 'cats', href: '#cats' },
     { key: 'blog', href: '#blog' },
     { key: 'contact', href: '#contact' }
   ];
