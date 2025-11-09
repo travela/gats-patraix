@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Sitemap generated from repository content; update or replace with automatic generator if desired -->
+  <url>
+    <loc>https://gatspatraix.es/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Localized roots (default is Spanish at /) -->
+  <url>
+    <loc>https://gatspatraix.es/ca/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://gatspatraix.es/en/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Blog posts (from src/content/blog) -->
+  <url>
+    <loc>https://gatspatraix.es/blog/frida-kahlo</loc>
+    <lastmod>2025-09-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Localized blog pages for the same post (built via /[lang]/blog/[slug]) -->
+  <url>
+    <loc>https://gatspatraix.es/ca/blog/frida-kahlo</loc>
+    <lastmod>2025-09-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://gatspatraix.es/en/blog/frida-kahlo</loc>
+    <lastmod>2025-09-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Cat pages (presented as dialogs on the home/locale pages) - link to the site root sections (anchored) -->
+  <url>
+    <loc>https://gatspatraix.es/#cats</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://gatspatraix.es/ca/#cats</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://gatspatraix.es/en/#cats</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- If you add more posts under src/content/blog or cat detail pages, regenerate this file or use @astrojs/sitemap -->
+</urlset>

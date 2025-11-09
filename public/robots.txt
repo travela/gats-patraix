@@ -1,0 +1,7 @@
+# robots.txt for gats-patraix
+# Allow all crawlers but keep the admin area private
+User-agent: *
+Disallow: /admin
+
+# Sitemap location (served from the public folder)
+Sitemap: https://gatspatraix.es/sitemap.xml
