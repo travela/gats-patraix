@@ -26,7 +26,7 @@ function Cats({ t, lang }: CatsProps) {
   // If cats not provided via props, load from content at build/server time
   const catsData: Cat[] = loadCats();
   return (
-    <section id="cats" className="py-20 bg-white">
+  <section id="cats" className="section-offset py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">

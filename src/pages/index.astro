@@ -16,7 +16,7 @@ const t = useTranslations(defaultLang);
 <Layout title={`${t.hero.title} - Asociación Gats Patraix`}>
   <Navigation t={t} lang={defaultLang} currentPath={Astro.url.pathname} client:load/>
   <main>
-    <Hero t={t} />
+    <Hero t={t} client:load />
     <!-- <About t={t} /> -->
     <Cats t={t} lang={defaultLang} client:load />
     <Blog t={t} lang={defaultLang} />

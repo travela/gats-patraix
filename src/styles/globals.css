@@ -76,6 +76,16 @@
   .cursor-paw-hover:hover {
     cursor: url("/paw.png") 16 16, auto;
   }
+
+  /* Enable smooth native scrolling and provide a helper to offset fixed headers */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  .section-offset {
+    /* Ensure native anchor jumps leave the section visible below the fixed header */
+    scroll-margin-top: 80px;
+  }
 }
 
 button {
