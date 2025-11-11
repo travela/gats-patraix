@@ -1,6 +1,6 @@
 ---
 id: robleabeto
-name: Roble (pardo) Abeto (blanco)
+name: Roble (pardo) Abeto (blanco) 🌲
 age: 0
 gender: male
 personality:
