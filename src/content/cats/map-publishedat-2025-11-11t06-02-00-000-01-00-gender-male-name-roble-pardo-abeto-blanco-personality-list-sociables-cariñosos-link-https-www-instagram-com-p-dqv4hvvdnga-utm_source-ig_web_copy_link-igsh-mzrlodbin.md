@@ -1,11 +1,12 @@
 ---
 id: robleabeto
-name: Roble (pardo) Abeto (blanco) 🌲
+name: Roble y Abeto 🌲
 age: 0
 gender: male
 personality:
   - sociables
   - cariñosos
+  - juguetones
 description: >-
   Roble el pardito y Abeto el blanco. Estos dos hermanos son sociables y
   cariñosos, pero el blanco es mucho más intrépido y valiente. El pardito es más
