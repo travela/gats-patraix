@@ -1,6 +1,6 @@
 ---
-id: negri
-name: Negri 🐈‍⬛
+id: luna
+name: Luna 🌙
 age: 0
 gender: female
 personality:
