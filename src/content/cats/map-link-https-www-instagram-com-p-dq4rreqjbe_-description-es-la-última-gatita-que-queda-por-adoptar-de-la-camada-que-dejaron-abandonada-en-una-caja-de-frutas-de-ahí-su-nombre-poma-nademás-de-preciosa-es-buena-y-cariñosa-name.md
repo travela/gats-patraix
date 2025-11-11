@@ -5,6 +5,7 @@ age: 1
 gender: female
 personality:
   - cariñosa
+  - sociable
 description: >-
   Es la última gatita que queda por adoptar de la camada que dejaron abandonada
   en una caja de frutas. De ahí su nombre, Poma. 
