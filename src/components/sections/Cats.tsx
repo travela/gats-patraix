@@ -63,7 +63,7 @@ function Cats({ t, lang }: CatsProps) {
                 
                 <div className="flex items-center text-sm text-gray-600 mb-3">
                   <User className="w-4 h-4 mr-2" />
-                  {t.cats.gender}: {cat.gender === 'male' ? 'Male' : 'Female'}
+                  {t.cats.gender}: {cat.gender === 'male' ? t.cats.male : t.cats.female}
                 </div>
                 
                 <div className="mb-3">
