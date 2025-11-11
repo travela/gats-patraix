@@ -1,6 +1,6 @@
 ---
 id: negri
-name: Negri
+name: Negri 🐈‍⬛
 age: 0
 gender: female
 personality:
