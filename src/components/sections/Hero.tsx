@@ -24,7 +24,7 @@ export function Hero({ t }: HeroProps) {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: 'url(https://images.pexels.com/photos/1741205/pexels-photo-1741205.jpeg?auto=compress&cs=tinysrgb&w=1920)'
+          backgroundImage: 'url("/public/hero.jpg")',
         }}
       >
         <div className="absolute inset-0 bg-black/40"></div>
