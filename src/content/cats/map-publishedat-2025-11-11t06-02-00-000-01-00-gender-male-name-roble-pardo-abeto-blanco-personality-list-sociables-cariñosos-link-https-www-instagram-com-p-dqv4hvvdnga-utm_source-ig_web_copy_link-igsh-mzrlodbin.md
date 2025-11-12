@@ -1,7 +1,7 @@
 ---
 id: robleabeto
 name: Roble y Abeto 🌲
-age: 0
+age: "<1 años"
 gender: male
 personality:
   - sociables

@@ -1,7 +1,7 @@
 ---
 id: luna
 name: Luna 🌙
-age: 0
+age: "0.5"
 gender: female
 personality:
   - cariñosa

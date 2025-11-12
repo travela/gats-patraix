@@ -1,7 +1,8 @@
 ---
 id: abedul
 name: Abedul 🌳
-age: 0
+age: "~3 meses"
+ageUnit: months
 gender: female
 description: "Os presentamos a esta pequeña, Abedul. Tanto ella como sus
   hermanos estaban en una nave de carpintería de La Torre, de ahí su nombre de

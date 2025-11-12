@@ -59,7 +59,7 @@ function Cats({ t, lang }: CatsProps) {
                 
                 <div className="flex items-center text-sm text-gray-600 mb-2">
                   <Calendar className="w-4 h-4 mr-2" />
-                  {t.cats.age}: {cat.age} {t.cats.years}
+                  {t.cats.age}: {!isNaN(parseFloat(cat.age)) ? `${cat.age} ${cat.ageUnit === 'months' ? t.cats.months : t.cats.years}` : cat.age}
                 </div>
                 
                 <div className="flex items-center text-sm text-gray-600 mb-3">
@@ -99,7 +99,9 @@ function Cats({ t, lang }: CatsProps) {
                       </DialogDescription>
                     </DialogHeader>
                     <div className="mt-4 flex items-center justify-between text-sm text-gray-600">
-                      <div>{t.cats.age}: {cat.age} {t.cats.years}</div>
+                      <div>
+                        {t.cats.age}: {!isNaN(parseFloat(cat.age)) ? `${cat.age} ${cat.ageUnit === 'months' ? t.cats.months : t.cats.years}` : cat.age}
+                      </div>
                       <div>{t.cats.gender}: {cat.gender === 'male' ? t.cats.male : t.cats.female}</div>
                     </div>
                     <div className="mt-4">

@@ -1,7 +1,7 @@
 ---
 id: poma
 name: Poma 🍏
-age: 1
+age: "1"
 gender: female
 personality:
   - cariñosa

@@ -1,7 +1,7 @@
 ---
 id: "1"
 name: GYM 🐱
-age: 1
+age: "1"
 gender: male
 personality:
   - Playful

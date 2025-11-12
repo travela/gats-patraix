@@ -43,6 +43,7 @@ export const translations = {
       gender: 'Gender',
       personality: 'Personality',
       years: 'years',
+      months: 'months',
       male: 'Male',
       female: 'Female'
     },
@@ -117,6 +118,7 @@ export const translations = {
       gender: 'Género',
       personality: 'Personalidad',
       years: 'años',
+      months: 'meses',
       male: 'Masculino',
       female: 'Femenino'
     },
@@ -191,6 +193,7 @@ export const translations = {
       gender: 'Gènere',
       personality: 'Personalitat',
       years: 'anys',
+      months: 'mesos',
       male: 'Mascle',
       female: 'Femení'
     },

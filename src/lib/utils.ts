@@ -30,7 +30,8 @@ export interface BlogPost {
 export interface Cat {
   id: string;
   name: string;
-  age: number;
+  age: string;
+  ageUnit?: 'months' | 'years';
   gender: 'male' | 'female';
   personality: string[];
   description: string;
