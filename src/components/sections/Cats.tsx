@@ -25,6 +25,7 @@ interface CatsProps {
 function Cats({ t, lang }: CatsProps) {
   // If cats not provided via props, load from content at build/server time
   const catsData: Cat[] = loadCats();
+
   return (
   <section id="cats" className="section-offset py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -66,7 +67,8 @@ function Cats({ t, lang }: CatsProps) {
                   {t.cats.gender}: {cat.gender === 'male' ? t.cats.male : t.cats.female}
                 </div>
                 
-                <div className="mb-3">
+                {/* Personality or add a placeholder / whitespace of the same height */}
+                {cat.personality ? <div className="mb-3">
                   <div className="text-sm font-medium text-gray-700 mb-1">{t.cats.personality}:</div>
                   <div className="flex flex-wrap gap-1">
                     {cat.personality.map((trait, index) => (
@@ -75,7 +77,7 @@ function Cats({ t, lang }: CatsProps) {
                       </Badge>
                     ))}
                   </div>
-                </div>
+                </div> : <div className="mb-3 h-[3rem]"></div>}
                 
                 <p className="text-sm text-gray-600 line-clamp-3">
                   {cat.description}
