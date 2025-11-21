@@ -41,18 +41,29 @@ function Cats({ t, lang }: CatsProps) {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {catsData.map((cat) => (
             <Card key={cat.id} className="group hover:shadow-xl transition-all duration-300 overflow-hidden border-0 shadow-lg">
-              <div className="relative overflow-hidden">
-                <img
-                  src={resolveImagePath(cat.image)}
-                  alt={cat.name}
-                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-                {cat.isSpecialNeeds && (
-                  <Badge className="absolute top-3 left-3 bg-orange-500 hover:bg-orange-600">
-                    Special Needs
-                  </Badge>
-                )}
-              </div>
+              <Dialog>
+                <DialogTrigger asChild>
+                  <div className="relative overflow-hidden cursor-pointer">
+                    <img
+                      src={resolveImagePath(cat.image)}
+                      alt={cat.name}
+                      className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                    {cat.isSpecialNeeds && (
+                      <Badge className="absolute top-3 left-3 bg-orange-500 hover:bg-orange-600 pointer-events-none">
+                        Special Needs
+                      </Badge>
+                    )}
+                  </div>
+                </DialogTrigger>
+                <DialogContent className="max-w-[95vw] max-h-[95vh] w-auto p-2 flex items-center justify-center">
+                  <img
+                    src={resolveImagePath(cat.image)}
+                    alt={cat.name}
+                    className="max-w-full max-h-[90vh] w-auto h-auto object-contain rounded-lg"
+                  />
+                </DialogContent>
+              </Dialog>
               
               <CardContent className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-2">{cat.name}</h3>
