@@ -1,13 +1,11 @@
 ---
-id: abedul
-name: Abedul 🌳
-age: "~3 meses"
-ageUnit: months
-gender: female
-description: "Os presentamos a esta pequeña, Abedul. Tanto ella como sus
-  hermanos estaban en una nave de carpintería de La Torre, de ahí su nombre de
-  árbol 🌲. Su hermano ya ha sido adoptado y ella está esperando ser la
-  siguiente! "
-image: src/assets/images/abedul.jpeg
+id: cory
+name: Cory
+age: "9"
+ageUnit: years
+gender: male
+description: Este precioso gato con máscara de batman necesita una familia. Si
+  te animas a adoptar un gato adulto, contáctanos!
+image: src/assets/images/cory_9.jpg
 publishedAt: 2025-11-11T06:11:00.000+01:00
 ---
